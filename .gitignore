@@ -1,0 +1,6 @@
+input/
+plink/
+prs_scores.txt
+.DS_Store
+qc/
+weights/
