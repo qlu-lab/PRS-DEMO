@@ -74,3 +74,15 @@ If you are using a Windows machine, follow this tutorial for [running .sh script
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 
 ![image](https://github.com/svdorn/PRSdemo/assets/22485021/7354c93e-46fe-4656-8fb2-714e0de3307c)
+The columns are as follows:
+* FID: family ID from genotype file
+* IID: individual ID from genotype file
+* LDpred2_: 13 columns representing running LDpred2 with 13 different tuning parameters
+	* LDpred2_auto: sample p from a posterior distribution and calculate h2 in each iteration of Gibbs sampler
+ 	* All other columns are of the format LDpred2_0.03_0.001_sparse. In this example, the tuning parameters are:
+  		* heritability (h2) is 0.03
+    		* the proportion of causal variants (p) is 0.001
+      		* sparse is True (when sparse is True, for variants whose posterior probability of being a causal variant is smaller than the set proportion of causal variants value in 2, their effect sizes will be exactly 0)
+* PRS_: 5 columns representing running default PRS method with 5 different tuning parameters
+	* All columns are of the format PRS_0.01. In this example the tuning parameter is:
+ 		* p-value <= 0.01
