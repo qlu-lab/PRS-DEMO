@@ -85,4 +85,4 @@ The columns are as follows:
     * sparse is True (when sparse is True, for variants whose posterior probability of being a causal variant is smaller than the set proportion of causal variants value, their effect sizes will be exactly 0)
 * PRS_: 5 columns representing running default PRS method with 5 different tuning parameters
   * All columns are of the format PRS_0.01. In this example the tuning parameter is:
-    * * p-value <= 0.01
+    * p-value <= 0.01
