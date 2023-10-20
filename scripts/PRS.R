@@ -10,11 +10,13 @@ sumstats_path <- as.character(args[2])
 cat("\nRunning default PRS method...")
 p_value_cutoff <- c(0.01, 0.05, 0.1, 0.5, 1)
 gwas.raw <- as.data.frame(fread(sumstats_path,header=T))
-gwas.out <- gwas.raw[,c(3,4,7,9)]
-colnames(gwas.out) <- c("snp","a1","weight","p")
+# run for chr 22 for purposes of the demo
+gwas.out <- gwas.raw[gwas.raw$CHR==22,]
+sumstats <- gwas.out[,c(3,4,7,9)]
+colnames(sumstats) <- c("snp","a1","weight","p")
 
 for (j in 1:length(p_value_cutoff)) {
-    dat <- gwas.out
+    dat <- sumstats
     
     dat <- dat %>% 
         mutate(weight = ifelse(p <= p_value_cutoff[j], weight, 0), p = NULL)
