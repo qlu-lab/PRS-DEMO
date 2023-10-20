@@ -4,6 +4,7 @@ suppressMessages(library(tidyverse))
 options(stringsAsFactors=F)
 args = commandArgs(trailingOnly=TRUE)
 wd <- as.character(args[1])
+os <- as.character(args[2])
 
 ####################### define helper functions ###################
 # Obtain necessary information from PRS output for PRS calculation
@@ -15,11 +16,15 @@ extract_snp_weights <- function(dat,snp,a1,weight){
 ####################### Sort all PRS weights ###################
 cat("\nSorting SNP weights for LDpred2...")
 # LDpred2
+chr_start <- 1
+if (os == "windows") {
+    chr_start <- 22
+}
 params <- c(1:13)
 for (j in 1:length(params)){
     dat <- c()
     weight.col <- j + 2
-    for (chr in 1:22) {
+    for (chr in chr_start:22) {
         dat.tmp <- as.data.frame(fread(paste0(wd,"/chr",chr,".ldpred2.txt"),header=F))
         dat.sorted <- extract_snp_weights(dat=dat.tmp,snp="V1",a1="V2",weight=weight.col)
         dat <- rbind(dat,dat.sorted)

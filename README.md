@@ -48,7 +48,7 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
 
 		<img width="495" alt="Screenshot 2023-10-17 at 2 22 42 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/d04dcfa6-b78e-4914-bd95-0aae17072376">
 
-
+* If you are using Windows, download [Git bash](https://gitforwindows.org/). Use this as your terminal to run the PRS script.
 
 ### Run
 * To run the script to get PRS scores, run
@@ -68,8 +68,6 @@ Where flags are
 * -p: path to PLINK software
 * -m: PRS methods you want to run
 * -o: opterating system (mac, windows, or linux)
-
-If you are using a Windows machine, follow this tutorial for [running .sh scripts in Windows](https://softwarekeep.com/help-center/how-to-run-shell-script-file-in-windows#)
   
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 

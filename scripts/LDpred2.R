@@ -15,10 +15,18 @@ wd <- as.character(args[1])
 h2 <- as.numeric(args[2])
 sumstats_path <- as.character(args[3])
 ldref <- as.character(args[4])
+os <- as.character(args[5])
 
 m <- 1030186
 cores <- max(1, detectCores() - 1, na.rm = TRUE)
-cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
+chr_start <- 1
+if (os == "windows") {
+    cores <- 1
+    chr_start <- 22
+    cat("\nRunning PRS model LDpred2 only for chromosome 22 as a demo\n")
+} else {
+    cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
+}
 
 # read and format gwas sumstats
 gwas.raw <- as.data.frame(fread(sumstats_path))
@@ -35,7 +43,7 @@ POS <- val_bed$map$physical.pos
 map <- val_bed$map[-(3)]
 names(map) <- c("chr", "rsid", "pos", "a1", "a0")
 # run LDpred2 for each chromosome
-ldpred2 <- mclapply(1:22, function(chr) {
+ldpred2 <- mclapply(chr_start:22, function(chr) {
     cat("\nRunning LDpred2 for chromosome ", chr, "\n")
     chr_out_path <- paste0(wd, "/chr", chr, ".ldpred2.txt")
 
@@ -71,5 +79,5 @@ ldpred2 <- mclapply(1:22, function(chr) {
     }
     fwrite2(beta_LDpred2, chr_out_path, col.names = F, row.names = F, quote = F,sep=" ",na=NA)
 }, mc.cores=cores)
-cat("\nFinished running LDPred2 for all 22 chromosomes\n")
+cat("\nFinished running LDPred2\n")
 
