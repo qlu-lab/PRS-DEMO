@@ -1,5 +1,5 @@
 # PRS-DEMO
-This is a demo of a PRS script that allows you to automatically train and calculate PRS scores across all popular PRS methods. Currently the demo will only work for LDpred2 and a simple PRS scoring method so the demo can be done in a timely fashion.
+This is a demo of a PRS script that allows you to automatically train and calculate PRS scores across all popular PRS methods. Currently, the demo will only work for LDpred2 and a simple PRS scoring method so the demo can be done in a timely fashion. For purposes of the demo, the PRS methods are trained only on data from chromosome 22 to make computation quick.
 
 ### Set up
 * Clone this repo into a folder on your local computer
@@ -71,7 +71,7 @@ Where flags are
   
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 
-![image](https://github.com/qlu-lab/PRS-DEMO/assets/22485021/1bc259d8-6d8a-4dca-b253-a8a7c410be32)
+![image](https://github.com/qlu-lab/PRS-DEMO/assets/22485021/63988f7b-00ae-4707-b800-082584dedbcb)
 
 The columns are as follows:
 * FID: family ID from genotype file
