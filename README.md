@@ -32,6 +32,9 @@ Download the LD and GWAS data using `wget`
 wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo/input
 ```
 
+**Alternatively, you can use download the input data from the** [Box drive](https://uwmadison.box.com/s/o8uehu40xsucig1zxwo6rgedrdrrqg2a)
+
+
 * Download PLINK
   * [Download PLINK](https://www.cog-genomics.org/plink/)
   * Unzip the downloaded file
