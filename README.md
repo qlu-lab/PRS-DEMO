@@ -66,7 +66,7 @@ Where flags are
 * -l: path to LD files
 * -g: path to genotype file
 * -p: path to PLINK software
-* -m: PRS methods you want to run
+* -m: PRS methods you want to run (right now it will default to run LDPred2 and default PRS method)
 * -o: opterating system (mac, windows, or linux)
   
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
