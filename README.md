@@ -71,7 +71,8 @@ Where flags are
   
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 
-![image](https://github.com/svdorn/PRSdemo/assets/22485021/7354c93e-46fe-4656-8fb2-714e0de3307c)
+![image](https://github.com/qlu-lab/PRS-DEMO/assets/22485021/1bc259d8-6d8a-4dca-b253-a8a7c410be32)
+
 The columns are as follows:
 * FID: family ID from genotype file
 * IID: individual ID from genotype file
