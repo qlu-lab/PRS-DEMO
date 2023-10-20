@@ -18,15 +18,13 @@ ldref <- as.character(args[4])
 os <- as.character(args[5])
 
 m <- 1030186
-cores <- max(1, detectCores() - 1, na.rm = TRUE)
-chr_start <- 1
-if (os == "windows") {
-    cores <- 1
-    chr_start <- 22
-    cat("\nRunning PRS model LDpred2 only for chromosome 22 as a demo\n")
-} else {
-    cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
-}
+#cores <- max(1, detectCores() - 1, na.rm = TRUE)
+#chr_start <- 1
+#cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
+cores <- 1
+chr_start <- 22
+cat("\nRunning PRS model LDpred2 only for chromosome 22 for the demo...\n")
+
 
 # read and format gwas sumstats
 gwas.raw <- as.data.frame(fread(sumstats_path))

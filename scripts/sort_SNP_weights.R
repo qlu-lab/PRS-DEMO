@@ -16,10 +16,9 @@ extract_snp_weights <- function(dat,snp,a1,weight){
 ####################### Sort all PRS weights ###################
 cat("\nSorting SNP weights for LDpred2...")
 # LDpred2
-chr_start <- 1
-if (os == "windows") {
-    chr_start <- 22
-}
+# chr_start <- 1
+chr_start <- 22
+
 params <- c(1:13)
 for (j in 1:length(params)){
     dat <- c()
